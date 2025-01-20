@@ -1,0 +1,14 @@
+$('#callFunction').click(function () {
+    // Make the AJAX call
+    $.ajax({
+        url: 'secure.php', // PHP file for secure retrieval
+        type: 'POST',
+        data: { action: 'getCredentials' }, // Action to retrieve credentials
+        success: function (response) {
+            $('#response').text(response); // Display the credentials
+        },
+        error: function () {
+            $('#response').text('An error occurred.');
+        }
+    });
+});
